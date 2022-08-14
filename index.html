@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--(" WZUBgSdZftFCZ*e36Fu^ ")-->
+  <head>
+    <meta charset="UTF-8">
+    <title> Coder Browser</title>
+    <link rel="icon" href="code.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url(bg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+      .time {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        color:wheat;
+        float:inline-start;
+
+      }
+      @media screen and (max-width: 768px) {
+        .time {
+          font-size: 200%;
+          text-align: center;
+          justify-content: center;
+        }
+      }
+      *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+      }
+
+      section{
+          position: relative;
+          width: 100%;
+          height: 80vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      section .main{
+          width: 500px;
+          margin: 0 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+      }
+      section .main .search{
+          position: relative;
+          width: 100%;
+          margin-top: 20px;
+      }
+      section .main .search .query{
+          width: 100%;
+          padding: 13px;
+          border: 1px solid darkslategrey;
+          outline: none;
+          font-size: 16px;
+          border-radius: 30px;
+          padding-left: 45px;
+          padding-right: 60px;
+      }
+      section .main .search .icons{
+          position:absolute;
+          top: 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 12px 20px;
+          align-items: center;
+          pointer-events: none;
+      }
+      section .main .search .icons img {
+          max-width: 100%;   
+      }
+
+      .searchbtn:hover{
+          border: 1px solid #ccc
+      }
+      ul{
+          list-style-type: none;
+          justify-content:left;
+          overflow: hidden;
+          transform: translateX(+3%)
+      }
+      li{
+          display: inline-block;
+      }
+      li a{
+          display: block;
+          color: black;
+          text-align: center;
+          padding: 14px;
+          text-decoration: none;
+          font-size: 17px;
+          font-family: 'Times New Roman'
+      }
+      ul li .URL{
+          padding: 13px;
+          width: 1100px;
+          height: 10px;
+          border: 1px solid darkslategrey;
+          outline: none;
+          font-size: 12px;
+          border-radius: 10px;
+          padding-left: 45px;
+          padding-right: 60px;
+      }
+      ul li .icons{
+          position:absolute;
+          top: 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 12px 20px;
+          align-items: center;
+          pointer-events: none;
+      }
+    </style>
+  </head>
+
+  <body ondragstart="return false;">
+    <ul>
+      <li>
+        <div class="time"></div>
+        <div class="date-time"></div>
+      </li>
+      <li>
+        <input type="text" name="" class="URL" placeholder="URL:" value="" style="background-color: gainsboro; color: green; background-size: 200px;" >
+        <div class="icons">
+          <div><img src="web.png" alt="button" width="20" height="20"></div>
+        </div>
+      </li>
+    </ul>
+      <section style="text-align: center;">
+          <div class="main">
+            <ul class="pelengkap">
+              <li>
+                <img src="code.ico" width="130" height="130">
+              </li>
+              <li>
+              <div class="time"></div>
+              <div class="date-time"></div>
+              </li>
+            </ul>
+              <div class="search">
+                <input type="text" name="" class="query" placeholder="Search in Duckduckgo" value="" style="background-color: gainsboro; color: black; background-size: 500px;" >
+                  <div class="icons">
+                      <div><img src="search.png" alt="button" width="20" height="20"></div>
+                      <div><img src="duckduckgo.png" alt="duck" width="20" height="20" style="clip-path:circle();"></div>
+                  </div>
+                  <ul>
+                      <li><a href="https://discord.com" target="_blank"> <img src="discord.png" width="50" height="50" style="clip-path:circle();"></a></li>
+                      <li><a href="https://getbootstrap.com/" target="_blank"> <img src="bootstrap.jpg" width="50" height="50" style="clip-path:circle();"></a></li>
+                      <li><a href="https://github.com" target="_blank"> <img src="github.png" width="50" height="50" style="clip-path:circle();"></a></li>
+                      <li><a href="https://youtube.com" target="_blank"><img src="youtube.png" width="50" height="50" style="clip-path:circle();"></a></li>
+                      <li><a href="https://stackoverflow.com/"target="_blank"><img src="stack.png" width="50" height="50" style="clip-path:circle();"></a></li>  
+                  </ul>
+              </div>
+              </div>
+          </div>
+      </section>
+    <script>
+      var time = document.querySelector('.time');
+      var dateTime = document.querySelector('.date-time');
+
+      function updateClock() {
+        // Get the current time, day , month and year
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var day = now.getDay();
+        var date = now.getDate();
+        var month = now.getMonth();
+        var year = now.getFullYear();
+
+        // store day and month name in an array
+        var dayNames = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+        var monthNames = ['Januari', 'Februari', 'Maret', 'April', 'May', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'December'];
+
+        // format date and time
+        hours = hours % 12 || 12;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        date = date < 10 ? '0' + date : date;
+
+        // display date and time
+        var period = hours < 12 ? 'PM' : 'AM';
+        time.innerHTML = hours + ':' + minutes  + ' ' + period;
+        
+        
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+
+
+      let query = document.querySelector('.query');
+
+      window.addEventListener('keydown', checkKeyPress, false)
+
+      function checkKeyPress(key){
+          if (key.keyCode == '13'){
+              let url = 'https://duckduckgo.com/'+query.value
+              window.open(url,'_blank');
+
+          }
+      }
+      let LINK = document.querySelector('.URL');
+
+      window.addEventListener('keydown', checkKeyPress, false)
+
+      function checkKeyPress(key){
+          if (key.keyCode == '13'){
+              let url = LINK.value
+              window.open(url,'_blank');
+
+          }
+      }
+    </script>
+  </body>
+
+</html>
