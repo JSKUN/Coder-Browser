@@ -3,6 +3,8 @@
 <!--(" WZUBgSdZftFCZ*e36Fu^ ")-->
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta name="theme-color">
     <title> Coder Browser</title>
     <link rel="icon" href="code.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -10,7 +12,7 @@
       body {
         margin: 0;
         padding: 0;
-        background-image: url(bg.png);
+        background-image: linear-gradient(to bottom right, #547053, #11887b,#415764);
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -115,55 +117,45 @@
           padding-left: 45px;
           padding-right: 60px;
       }
-      ul li .icons{
-          position:absolute;
+      .pelengkap{
+        position:absolute;
           top: 0;
           width: 100%;
           display: flex;
           justify-content: space-between;
           padding: 12px 20px;
           align-items: center;
-          pointer-events: none;
       }
+
     </style>
   </head>
 
   <body ondragstart="return false;">
-    <ul>
-      <li>
-        <div class="time"></div>
-        <div class="date-time"></div>
-      </li>
-      <li>
-        <input type="text" name="" class="URL" placeholder="URL:" value="" style="background-color: gainsboro; color: green; background-size: 200px;" >
-        <div class="icons">
-          <div><img src="web.png" alt="button" width="20" height="20"></div>
-        </div>
-      </li>
-    </ul>
+        <ul>
+          <li>
+          <div class="time"></div>
+          <div class="date-time"></div>
+          </li>
+          <li>
+          <a href="https://github.com/JSKUN/Coder-Browser/" target="_blank"><button style=" font-family: arial black; border-radius:5px; border:1px transparent; font-size: 15px;">Code</button></a>
+          </li>
+        </ul>
       <section style="text-align: center;">
           <div class="main">
-            <ul class="pelengkap">
-              <li>
-                <img src="code.ico" width="130" height="130">
-              </li>
-              <li>
-              <div class="time"></div>
-              <div class="date-time"></div>
-              </li>
-            </ul>
+              <img src="code.ico" width="130" height="130" alt="">
+              
               <div class="search">
                 <input type="text" name="" class="query" placeholder="Search in Duckduckgo" value="" style="background-color: gainsboro; color: black; background-size: 500px;" >
                   <div class="icons">
-                      <div><img src="search.png" alt="button" width="20" height="20"></div>
-                      <div><img src="duckduckgo.png" alt="duck" width="20" height="20" style="clip-path:circle();"></div>
+                      <div><img src="search.png" alt="button" width="20" height="20" ></div>
+                      <div><img src="duckduckgo.png" alt="duck" width="25" height="25" style="clip-path:circle();"></div>
                   </div>
                   <ul>
-                      <li><a href="https://discord.com" target="_blank"> <img src="discord.png" width="50" height="50" style="clip-path:circle();"></a></li>
-                      <li><a href="https://getbootstrap.com/" target="_blank"> <img src="bootstrap.jpg" width="50" height="50" style="clip-path:circle();"></a></li>
-                      <li><a href="https://github.com" target="_blank"> <img src="github.png" width="50" height="50" style="clip-path:circle();"></a></li>
-                      <li><a href="https://youtube.com" target="_blank"><img src="youtube.png" width="50" height="50" style="clip-path:circle();"></a></li>
-                      <li><a href="https://stackoverflow.com/"target="_blank"><img src="stack.png" width="50" height="50" style="clip-path:circle();"></a></li>  
+                      <li><a href="https://discord.com" target="_blank"> <img src="discord.png" width="50" height="50" style="clip-path:circle();" alt=""></a></li>
+                      <li><a href="https://getbootstrap.com/" target="_blank"> <img src="bootstrap.jpg" width="50" height="50" style="clip-path:circle(); " alt=""></a></li>
+                      <li><a href="https://github.com" target="_blank"> <img src="github.png" width="50" height="50" style="clip-path:circle();" alt=""></a></li>
+                      <li><a href="https://youtube.com" target="_blank"><img src="youtube.png" width="50" height="50" style="clip-path:circle(); " alt=""></a></li>
+                      <li><a href="https://stackoverflow.com/"target="_blank"><img src="stack.png" width="50" height="50" style="clip-path:circle();" alt=""></a></li>  
                   </ul>
               </div>
               </div>
@@ -206,27 +198,15 @@
 
 
       let query = document.querySelector('.query');
-
       window.addEventListener('keydown', checkKeyPress, false)
 
       function checkKeyPress(key){
           if (key.keyCode == '13'){
-              let url = 'https://duckduckgo.com/'+query.value
+              let url = 'https://duckduckgo.com/?q='+query.value
               window.open(url,'_blank');
-
           }
       }
-      let LINK = document.querySelector('.URL');
 
-      window.addEventListener('keydown', checkKeyPress, false)
-
-      function checkKeyPress(key){
-          if (key.keyCode == '13'){
-              let url = LINK.value
-              window.open(url,'_blank');
-
-          }
-      }
     </script>
   </body>
 
