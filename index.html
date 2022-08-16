@@ -3,6 +3,7 @@
 <!--(" g7D*Zb(RnRI8XZ5rcKCR ")-->
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Coder browser By:JSKUN">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color">
     <title> Coder Browser</title>
@@ -141,7 +142,6 @@
       var dateTime = document.querySelector('.date-time');
 
       function updateClock() {
-        // Get the current time, day , month and year
         var now = new Date();
         var hours = now.getHours();
         var minutes = now.getMinutes();
@@ -151,17 +151,14 @@
         var month = now.getMonth();
         var year = now.getFullYear();
 
-        // store day and month name in an array
         var dayNames = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
         var monthNames = ['Januari', 'Februari', 'Maret', 'April', 'May', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'December'];
 
-        // format date and time
         hours = hours % 12 || 12;
         minutes = minutes < 10 ? '0' + minutes : minutes;
         seconds = seconds < 10 ? '0' + seconds : seconds;
         date = date < 10 ? '0' + date : date;
 
-        // display date and time
         var period = hours < 12 ? 'PM' : 'AM';
         time.innerHTML = hours + ':' + minutes  + ' ' + period;
         
