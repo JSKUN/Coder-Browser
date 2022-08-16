@@ -110,7 +110,6 @@
     <ul class="pelengkap">
         <li>
             <div class="time"></div>
-            <div class="date-time"></div>
         </li>
         <li>
             <a href="https://github.com/JSKUN/Coder-Browser/" target="_blank"><button style=" font-family: arial black; border-radius:5px; border:1px transparent; font-size: 15px;">Code</button></a>
@@ -127,7 +126,7 @@
                   </div>
                   <ul>
                       <li><a href="https://discord.com/" target="_blank"> <img src="discord.png" alt="discord" width="48" height="48" style="clip-path:circle();"></a></li>
-                      <li><a href="https://getbootstrap.com/" target="_blank"> <img src="bootstrap.jpg" alt="bootstrap" width="48" height="48" style="clip-path:circle();"></a></li>
+                      <li><a href="https://getbootstrap.com/" target="_blank"> <img src="bootstrap.png" alt="bootstrap" width="48" height="48" style="clip-path:circle();"></a></li>
                       <li><a href="https://github.com" target="_blank"> <img src="github.png" alt="github" width="48" height="48" style="clip-path:circle();"></a></li>
                       <li><a href="https://stackoverflow.com/"target="_blank"><img src="stack.png" alt="stackoverflow" width="48" height="48" style="clip-path:circle();"></a></li>  
                       <li><a href="https://youtube.com" target="_blank"><img src="youtube.png" alt="youtube" width="48" height="48" style="clip-path:circle();"></a></li>
@@ -138,25 +137,14 @@
       </section>
     <script>
       var time = document.querySelector('.time');
-      var dateTime = document.querySelector('.date-time');
 
       function updateClock() {
         var now = new Date();
         var hours = now.getHours();
         var minutes = now.getMinutes();
-        var seconds = now.getSeconds();
-        var day = now.getDay();
-        var date = now.getDate();
-        var month = now.getMonth();
-        var year = now.getFullYear();
-
-        var dayNames = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
-        var monthNames = ['Januari', 'Februari', 'Maret', 'April', 'May', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'December'];
 
         hours = hours % 12 || 12;
         minutes = minutes < 10 ? '0' + minutes : minutes;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        date = date < 10 ? '0' + date : date;
 
         var period = hours < 12 ? 'PM' : 'AM';
         time.innerHTML = hours + ':' + minutes  + ' ' + period;
