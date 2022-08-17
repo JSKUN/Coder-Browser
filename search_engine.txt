@@ -1,0 +1,1 @@
+SAYURASEM = https://cse.google.com/cse?cx=70ac32d41f8334090#gsc.tab=0
